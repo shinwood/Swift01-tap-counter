@@ -18,3 +18,6 @@ My Swift-Learning Projects.
 - NSNumberformatter
 
   ​
+
+  ![preview](https://raw.githubusercontent.com/shinwood/Swift01-tap-counter/master/01-tap-counter.gif)
+

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swfit01_tap_counter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,122 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-ob-43R">
+                                <rect key="frame" x="235" y="279" width="131" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="8Sh-sG-fZt"/>
+                                    <constraint firstAttribute="width" constant="131" id="WeC-fK-9i6"/>
+                                    <constraint firstAttribute="width" constant="131" id="my6-iG-gEX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="增加计数"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Sh-sG-fZt"/>
+                                        <exclude reference="my6-iG-gEX"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPv-ia-So7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKe-L3-AgU">
+                                <rect key="frame" x="20" y="28" width="72" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="清除计数"/>
+                                <connections>
+                                    <action selector="clearCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aT1-l0-pCD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-L1-hmN">
+                                <rect key="frame" x="290" y="185" width="20" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="Art-LW-kIB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Art-LW-kIB"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="55" id="0XR-kS-lry"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Z1-Vn-UNd"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="93" id="1bd-Ux-uzx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dSr-ob-43R" secondAttribute="bottom" constant="145" id="3pT-N6-woC"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4UP-fB-TyO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FKe-L3-AgU" secondAttribute="leading" id="6Jd-6z-boj"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="top" secondItem="FKe-L3-AgU" secondAttribute="bottom" constant="94" id="6e5-01-DEa"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="215" id="AxZ-3L-ISd"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="136" id="DAC-fo-hFu"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="FKe-L3-AgU" secondAttribute="bottom" constant="217" id="De6-0Y-3Id"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="EBH-SD-L7P"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gm7-Et-4mg"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="84" id="Lss-fg-DuQ"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nc2-tU-D9A"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="246" id="OHW-rw-Uxn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="285" id="OTQ-QS-pO4"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="115" id="SKF-xp-z9T"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="leading" secondItem="FKe-L3-AgU" secondAttribute="trailing" constant="174" id="TmP-6B-jL4"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="FKe-L3-AgU" secondAttribute="bottom" constant="217" id="YzB-gU-eRz"/>
+                            <constraint firstItem="FKe-L3-AgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bdq-LD-WFf"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="top" secondItem="FKe-L3-AgU" secondAttribute="bottom" constant="94" id="ghI-SY-2QT"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="top" secondItem="FKe-L3-AgU" secondAttribute="bottom" constant="123" id="gkU-5Q-wJG"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="guD-i9-Nhh"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h6h-ZS-Gmy"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="centerX" secondItem="dSr-ob-43R" secondAttribute="centerX" id="hyj-aq-MSM"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i9m-wV-Crq"/>
+                            <constraint firstItem="0u1-L1-hmN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iVm-34-bJg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dSr-ob-43R" secondAttribute="trailing" constant="214" id="kKZ-A9-3zm"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="top" secondItem="0u1-L1-hmN" secondAttribute="bottom" constant="55" id="vVe-8m-XC2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0u1-L1-hmN" secondAttribute="trailing" constant="246" id="vmR-pf-EvU"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerX" secondItem="0u1-L1-hmN" secondAttribute="centerX" id="vop-ax-ZHn"/>
+                            <constraint firstItem="dSr-ob-43R" firstAttribute="centerX" secondItem="0u1-L1-hmN" secondAttribute="centerX" id="yby-LK-K7C"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4UP-fB-TyO"/>
+                                <exclude reference="6e5-01-DEa"/>
+                                <exclude reference="DAC-fo-hFu"/>
+                                <exclude reference="EBH-SD-L7P"/>
+                                <exclude reference="Gm7-Et-4mg"/>
+                                <exclude reference="Nc2-tU-D9A"/>
+                                <exclude reference="OHW-rw-Uxn"/>
+                                <exclude reference="TmP-6B-jL4"/>
+                                <exclude reference="ghI-SY-2QT"/>
+                                <exclude reference="gkU-5Q-wJG"/>
+                                <exclude reference="iVm-34-bJg"/>
+                                <exclude reference="vmR-pf-EvU"/>
+                                <exclude reference="0XR-kS-lry"/>
+                                <exclude reference="1Z1-Vn-UNd"/>
+                                <exclude reference="1bd-Ux-uzx"/>
+                                <exclude reference="AxZ-3L-ISd"/>
+                                <exclude reference="De6-0Y-3Id"/>
+                                <exclude reference="Lss-fg-DuQ"/>
+                                <exclude reference="SKF-xp-z9T"/>
+                                <exclude reference="YzB-gU-eRz"/>
+                                <exclude reference="guD-i9-Nhh"/>
+                                <exclude reference="kKZ-A9-3zm"/>
+                                <exclude reference="vop-ax-ZHn"/>
+                                <exclude reference="yby-LK-K7C"/>
+                                <exclude reference="3pT-N6-woC"/>
+                                <exclude reference="OTQ-QS-pO4"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="counter" destination="0u1-L1-hmN" id="m6q-fc-vw7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
